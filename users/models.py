@@ -3,11 +3,15 @@ from django.db import models
 
 class User(AbstractUser):
 
-    """ User Model """
+    """
+    Extension of the User Model. Because of the profile photo
+    """
 
-    username = models.CharField(max_length=140, unique=True)
     photo = models.ImageField()
 
     def __str__(self):
+        """
+        Returning the user name as a string representation
+        """
         return self.username
 
