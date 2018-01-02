@@ -69,13 +69,15 @@ class Magazine(AbstractTimeStamp):
 
     """
     A magazine is a compilation of Articles, usually with a topic.
-    Is related to :model:`publications.Article`
+    Is related to :model:`publications.Article` and :model:`publications.Category`
     """
 
     cover = models.ImageField()
     name = models.CharField(max_length=140)
     info = models.TextField()
     articles = models.ManyToManyField(Article)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    is_featured = models.BooleanField(default=False)
 
     def __str__(self):
         """

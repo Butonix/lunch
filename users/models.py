@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class User(AbstractUser):
 
     """
@@ -9,10 +10,10 @@ class User(AbstractUser):
     """
 
     photo = models.ImageField()
+    bio = models.CharField(max_length=140)
 
     def __str__(self):
         """
         Returning the user name as a string rep.
         """
         return self.username
-
