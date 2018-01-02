@@ -4,14 +4,15 @@ from django.db import models
 class User(AbstractUser):
 
     """
-    Extension of the User Model. Because of the profile photo
+    Extension of the User Model. We need to extend it
+    to be able to add profile photo
     """
 
     photo = models.ImageField()
 
     def __str__(self):
         """
-        Returning the user name as a string representation
+        Returning the user name as a string rep.
         """
         return self.username
 
