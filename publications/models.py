@@ -51,7 +51,7 @@ class Article(AbstractTimeStamp):
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default="draft")
     keywords = models.CharField(max_length=140)
-    article = models.TextField()
+    body = models.TextField()
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="articles")
     is_featured = models.BooleanField(default=False)
