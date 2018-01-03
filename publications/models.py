@@ -49,6 +49,7 @@ class Article(AbstractTimeStamp):
     cover = models.ImageField()
     title = models.CharField(max_length=140)
     subtitle = models.CharField(max_length=140)
+    slug = models.SlugField()
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default="draft")
     keywords = models.CharField(max_length=140)
@@ -74,6 +75,7 @@ class Magazine(AbstractTimeStamp):
 
     cover = models.ImageField()
     name = models.CharField(max_length=140)
+    slug = models.SlugField()
     info = models.TextField()
     articles = models.ManyToManyField(Article)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
