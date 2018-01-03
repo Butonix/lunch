@@ -24,6 +24,9 @@ class Category(AbstractTimeStamp):
     name = models.CharField(max_length=140)
     photo = models.ImageField()
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         """
         Returning name as string rep.
@@ -52,7 +55,7 @@ class Article(AbstractTimeStamp):
     body = models.TextField()
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="articles")
-    is_featured = models.BooleanField(default=False)
+    is_featured = models.BooleanField(default=False, verbose_name="Is Featured")
     author = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='articles')
 
     def __str__(self):
@@ -74,7 +77,7 @@ class Magazine(AbstractTimeStamp):
     info = models.TextField()
     articles = models.ManyToManyField(Article)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    is_featured = models.BooleanField(default=False)
+    is_featured = models.BooleanField(default=False, verbose_name="Is Featured")
 
     def __str__(self):
         """

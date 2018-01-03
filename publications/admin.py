@@ -12,6 +12,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
     """
     ModelAdmin class that
     is going to control how we display the Category object
@@ -21,6 +22,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.Magazine)
+class MagazineAdmin(admin.ModelAdmin):
     """
     ModelAdmin class that
     is going to control how we display the Magazine object
