@@ -5,8 +5,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Home Page
     # See article by slug
-    # See magazine by slug
-    # Search articles by tags
+    # See magazines by slug
+    # Search articles and magazines by tags
     # Create account
     # Log in
     # See user profile
@@ -14,6 +14,7 @@ urlpatterns = [
     # See reading list
     # Write article
     # Edit article
+    # See categories list
 ]
 
 admin.site.site_header = "Lunch Admin"
