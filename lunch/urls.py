@@ -13,6 +13,7 @@ urlpatterns = [
     # Edit user profile
     # See reading list
     # Write article
+    # Edit article
 ]
 
 admin.site.site_header = "Lunch Admin"
