@@ -1,7 +1,5 @@
 from django.db import models
 
-from users import models as user_models
-
 
 class AbstractTimeStamp(models.Model):
 
@@ -55,8 +53,7 @@ class Article(AbstractTimeStamp):
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="articles")
     is_featured = models.BooleanField(default=False)
-    author = models.ForeignKey(
-        user_models.User, on_delete=models.CASCADE, related_name='articles')
+    author = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='articles')
 
     def __str__(self):
         """
