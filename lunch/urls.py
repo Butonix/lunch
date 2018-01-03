@@ -14,3 +14,5 @@ urlpatterns = [
     # See reading list
     # Write article
 ]
+
+admin.site.site_header = "Lunch Admin"
